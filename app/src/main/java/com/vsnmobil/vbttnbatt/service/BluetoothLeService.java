@@ -419,8 +419,9 @@ public class BluetoothLeService extends Service {
 				}
 				else {
 					// Hao
-					broadcastUpdate(ACTION_DATA_RESPONSE, "Turning OFF...PLEASE WAIT for V.ALRT to beep twice & blink red-green LED", "");				
-					appVerification(gatt, getGattChar(gatt, Constants.SERVICE_VSN_SIMPLE_SERVICE,Constants.CHAR_APP_VERIFICATION),Constants.RESET_TURN_OFF_VALUE);					
+					broadcastUpdate(ACTION_DATA_RESPONSE, "Turning OFF...PLEASE WAIT for V.ALRT to beep twice & blink red-green LED", "");
+					BluetoothGattCharacteristic gattChar =getGattChar(gatt, Constants.SERVICE_VSN_SIMPLE_SERVICE,Constants.CHAR_APP_VERIFICATION);
+					appVerification(gatt, gattChar,Constants.RESET_TURN_OFF_VALUE);
 				}
 				
 				/* Hao
